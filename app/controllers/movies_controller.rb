@@ -16,6 +16,15 @@ class MoviesController < ApplicationController
     end
   end
 
+  def destroy
+    @movie.detroy!
+
+    respond_to do |format|
+      format.html { redirect_to movies_path, notice: "Movie deleted", status: :see_other }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def movie_params
