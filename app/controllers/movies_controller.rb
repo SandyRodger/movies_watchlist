@@ -3,9 +3,10 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
-  def new
-    @movie = Movie.new
-  end
+  # DO I NEED THIS?
+  # def new 
+  #   @movie = Movie.new
+  # end
 
   def create
     @movie = Movie.new(movie_params)
