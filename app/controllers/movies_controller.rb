@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController 
+  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+
   def index
     @movies = Movie.all
   end
@@ -17,12 +19,8 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    @movie.detroy!
-
-    respond_to do |format|
-      format.html { redirect_to movies_path, notice: "Movie deleted", status: :see_other }
-      format.json { head :no_content }
-    end
+    @movie.destroy
+    redirect_to movies_path, notice: "Movie deleted."
   end
 
   private
