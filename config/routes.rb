@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   # Optional: set the homepage
   root "movies#index"
+
 end
